@@ -1,0 +1,285 @@
+:root{
+    --bakgrunn: #0D1117;    /*Hovedbakgrunn*/
+    --flate: #161B22;       /*Kort, seksjoner*/
+    --kantlinje: #30363D;   /*Rammer, linjer*/
+    --tekst:#E6EDF3;        /*Brødtekst, overskrifter*/
+    --dempet: #8B949E;      /*Sekundærtekst*/
+    --aksent1: #22D3EE;     /*Knapper, lenker, logo*/
+    --aksent2: #A78BFA;     /*Detaljer, hovern*/
+    --suksess: #34D399;     /*Status, «åpen for jobb»*/
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--bakgrunn);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 60px;
+    background-color: var(--flate);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.logo {
+    font-weight: bold;
+    color: var(--aksent1);
+    padding-left: 27px;
+}
+
+.nav {
+    display: flex;
+    gap: 50px;
+    margin-right: 100px;
+    font-size: 16px;
+    list-style: none;
+}
+
+.nav a {
+    position: relative;
+    display: inline-block;   
+    overflow: hidden;         
+    padding-bottom: 6px;
+    color: var(--dempet);
+    text-decoration: none;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--aksent1);
+    transform: translateX(-100%);   
+    transition: transform 0.3s;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+    transform: translateX(0);     
+}
+
+.nav a:hover {
+    color: var(--aksent1);
+}
+
+.nav a.active {
+    color: var(--aksent1);
+}
+
+.content {
+    display: block;
+    margin-top: 70px;
+    margin-left: 10%;
+    position: relative;
+}
+
+.første {
+    color: var(--aksent1);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 2px;
+}
+
+.content h1{
+    color: var(--tekst);
+    padding-top: 5px;
+    font-size: 62px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+    font-weight: lighter;
+}
+
+.content h2{
+    color: var(--aksent2);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 2px;
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
+.context {
+    color: var(--dempet);
+    letter-spacing: 1px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-bottom: 30px;
+    font-size: 17px;
+}
+
+.buttons{
+    display: flex;
+    gap: 16px;
+}
+
+.prosjekt {
+    border: 1px solid var(--aksent1);
+    padding: 10px 42px;
+    border-radius: 7px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#se-prosjekter {
+    color: var(--flate);
+    background-color: var(--aksent1);
+    font-weight: bold;
+    font-size: 17px;
+}
+
+#kontakt {
+    color: var(--aksent1);
+    background-color: none;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.content img {
+    position: absolute;
+    width: 500px;
+    height: 350px;
+    top: 0;
+    left: 59.5%;
+    border-radius: 20px;
+}
+
+.content-1 {
+    margin-left: 10%;
+    margin-top: 200px;
+}
+
+
+.section-title {
+    position: relative;
+    display: inline-block;     
+    padding-bottom: 10px;       
+    font-size: 30px;
+    color: var(--tekst);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;             
+    height: 3px;
+    background-color: var(--aksent1);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+.section-title:hover::after {
+    width: 100%;               
+}
+
+.cards {
+    display: flex;
+    gap: 38px;
+    margin-top: 25px;
+    max-width: 600px;
+}
+
+.card {
+    border: 1px solid var(--kantlinje);
+    border-radius: 8px;
+    padding: 10px 17px;
+    background-color: var(--flate);
+}
+
+.card img {
+    width: 400px;
+    height: 260px;
+    border-radius: 8px;
+}
+
+.card h2 {
+    color: var(--tekst);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-bottom: 6px;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.card p {
+    color: var(--dempet);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-bottom: 10px;
+    line-height: 1.4; /*делает расстояние между строками*/ 
+}
+
+.card ul {
+    display: flex;
+    gap: 12px;
+}
+
+.card li {
+    list-style: none;
+    color: var(--aksent1);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+}
+
+.ferdigheter {
+    margin-left: 10%;
+    margin-top: 4%;
+}
+
+.ferdigheter ul {
+    display: flex;
+    gap: 18px;
+    list-style: none;
+}
+
+.ferdigheter li {
+    border: 1px solid var(--kantlinje);
+    padding: 12px 40px;
+    border-radius: 20px;
+    background-color: var(--flate);
+    color: var(--aksent1);
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+}
+
+footer {
+    margin-top: 5%;
+    height: 80px;
+    background-color: var(--flate);
+    border-top: 1px solid var(--kantlinje);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.text-1 {
+    color: var(--dempet);
+    padding-top: 30px;
+    padding-left: 40px;
+}
+
+.text-2 {
+    color: var(--dempet);
+    padding-top: 30px;
+    padding-right: 85px;
+}
+
+.text-2 ul {
+    display: flex;
+    gap: 30px;
+}

@@ -1,0 +1,261 @@
+:root{
+    --bakgrunn: #0D1117;    /*Hovedbakgrunn*/
+    --flate: #161B22;       /*Kort, seksjoner*/
+    --kantlinje: #30363D;   /*Rammer, linjer*/
+    --tekst:#E6EDF3;        /*Brødtekst, overskrifter*/
+    --dempet: #8B949E;      /*Sekundærtekst*/
+    --aksent1: #22D3EE;     /*Knapper, lenker, logo*/
+    --aksent2: #A78BFA;     /*Detaljer, hovern*/
+    --suksess: #34D399;     /*Status, «åpen for jobb»*/
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--bakgrunn);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 60px;
+    background-color: var(--flate);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.logo {
+    font-weight: bold;
+    color: var(--aksent1);
+    padding-left: 27px;
+}
+
+.nav {
+    display: flex;
+    gap: 50px;
+    margin-right: 100px;
+    font-size: 16px;
+    list-style: none;
+}
+
+.nav a {
+    position: relative;
+    display: inline-block;   
+    overflow: hidden;         
+    padding-bottom: 6px;
+    color: var(--dempet);
+    text-decoration: none;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--aksent1);
+    transform: translateX(-100%);   
+    transition: transform 0.3s;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+    transform: translateX(0);     
+}
+
+.nav a:hover {
+    color: var(--aksent1);
+}
+
+.nav a.active {
+    color: var(--aksent1);
+}
+
+.content-1 {
+    margin-left: 10%;
+    margin-top: 50px;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;     
+    padding-bottom: 10px;       
+    font-size: 30px;
+    color: var(--tekst);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;             
+    height: 3px;
+    background-color: var(--aksent1);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+.section-title:hover::after {
+    width: 100%;               
+}
+
+.om-meg {
+    padding-top: 25px;
+    position: relative;
+}
+
+.om-meg img {
+    width: 500px;
+    height: 600px;
+    border-radius: 10px;
+}
+
+.om-meg-tekst {
+    position: absolute;
+    top: 0;
+    left: 46%;
+    width: 40%;
+    padding-top: 25px;
+}
+
+.om-meg-tekst h2 {
+    color: var(--aksent1);
+    padding-bottom: 7px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+}
+
+.om-meg-tekst p {
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+    color: var(--dempet);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.om-meg-tekst a{
+    text-decoration: none;
+    color: var(--dempet);
+    cursor: pointer;
+}
+
+.om-meg-tekst a:hover {
+    color: var(--aksent1);
+}
+
+.content-2 {
+    margin-left: 10%;
+    margin-top: 7%;
+    position: relative;
+}
+
+.section-title-2 {
+    position: relative;
+    display: inline-block;     
+    padding-bottom: 10px;       
+    font-size: 30px;
+    color: var(--tekst);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.section-title-2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;             
+    height: 3px;
+    background-color: var(--aksent1);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+.section-title-2:hover::after {
+    width: 100%;               
+}
+
+.video {
+    padding-top: 20px;
+    max-width: 640px;
+}
+
+.kontroller {
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;
+    padding-left: 8%;
+}
+
+.kontroller button {
+    background-color: var(--flate);
+    border: 1px solid var(--kantlinje);
+    border-radius: 10px;
+    padding: 7px 10px;
+    color: var(--dempet);
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 13px;
+}
+
+.kontroller button:hover {
+    color: var(--aksent1);
+}
+
+.content-2-2 {
+    position: absolute;
+    left: 52%;
+    top: 79.5%;
+    border: 1px solid var(--kantlinje);
+    background-color: var(--flate);
+    padding: 7px 14px;
+    max-width: 450px;
+    letter-spacing: 1px;
+    line-height: 23px;
+    border-radius: 12px;
+    color: var(--dempet);
+}
+
+.content-2-2 span {
+    color: var(--aksent1);
+}
+
+footer {
+    margin-top: 5%;
+    height: 80px;
+    background-color: var(--flate);
+    border-top: 1px solid var(--kantlinje);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.text-1 {
+    color: var(--dempet);
+    padding-top: 30px;
+    padding-left: 40px;
+}
+
+.text-2 {
+    color: var(--dempet);
+    padding-top: 30px;
+    padding-right: 85px;
+}
+
+.text-2 ul {
+    display: flex;
+    gap: 30px;
+}
+
+
+
+
+
