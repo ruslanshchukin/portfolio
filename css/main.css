@@ -15,23 +15,16 @@
     padding: 0;
 }
 
-img {
-    max-width: 100%;
-}
-
 body{
     background-color: var(--bakgrunn);
-    overflow-x: hidden;   /* страховка от горизонтальной прокрутки */
 }
-
-/* ================= HEADER ================= */
 
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    min-height: 60px;
+    height: 60px;
     background-color: var(--flate);
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -52,8 +45,8 @@ header{
 
 .nav a {
     position: relative;
-    display: inline-block;
-    overflow: hidden;
+    display: inline-block;   
+    overflow: hidden;         
     padding-bottom: 6px;
     color: var(--dempet);
     text-decoration: none;
@@ -69,13 +62,13 @@ header{
     width: 100%;
     height: 2px;
     background-color: var(--aksent1);
-    transform: translateX(-100%);
+    transform: translateX(-100%);   
     transition: transform 0.3s;
 }
 
 .nav a:hover::after,
 .nav a.active::after {
-    transform: translateX(0);
+    transform: translateX(0);     
 }
 
 .nav a:hover {
@@ -86,18 +79,11 @@ header{
     color: var(--aksent1);
 }
 
-/* ================= HERO ================= */
-
 .content {
     display: block;
     margin-top: 70px;
     margin-left: 10%;
     position: relative;
-}
-
-/* текст не заходит под фото (только на широких экранах) */
-.content > *:not(img) {
-    max-width: 55%;
 }
 
 .første {
@@ -109,7 +95,7 @@ header{
 .content h1{
     color: var(--tekst);
     padding-top: 5px;
-    font-size: clamp(34px, 3.2vw, 62px);   /* сам подстраивается */
+    font-size: 62px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     letter-spacing: 1px;
     font-weight: lighter;
@@ -119,7 +105,7 @@ header{
     color: var(--aksent2);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     letter-spacing: 2px;
-    font-size: clamp(20px, 1.6vw, 30px);
+    font-size: 30px;
     padding-bottom: 20px;
 }
 
@@ -133,7 +119,6 @@ header{
 
 .buttons{
     display: flex;
-    flex-wrap: wrap;
     gap: 16px;
 }
 
@@ -157,35 +142,30 @@ header{
 
 #kontakt {
     color: var(--aksent1);
-    background-color: transparent;
+    background-color: none;
     font-weight: 500;
     font-size: 17px;
 }
 
 .content img {
     position: absolute;
+    width: 500px;
+    height: 350px;
     top: 0;
     left: 59.5%;
-    width: 34%;
-    max-width: 500px;
-    height: auto;
-    aspect-ratio: 10 / 7;
-    object-fit: cover;
     border-radius: 20px;
 }
 
-/* ================= ПРОЕКТЫ ================= */
-
 .content-1 {
     margin-left: 10%;
-    margin-right: 10%;
     margin-top: 200px;
 }
 
+
 .section-title {
     position: relative;
-    display: inline-block;
-    padding-bottom: 10px;
+    display: inline-block;     
+    padding-bottom: 10px;       
     font-size: 30px;
     color: var(--tekst);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -196,7 +176,7 @@ header{
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 40px;
+    width: 40px;             
     height: 3px;
     background-color: var(--aksent1);
     border-radius: 2px;
@@ -204,18 +184,17 @@ header{
 }
 
 .section-title:hover::after {
-    width: 100%;
+    width: 100%;               
 }
 
 .cards {
     display: flex;
-    flex-wrap: wrap;          /* карточки переносятся вниз */
     gap: 38px;
     margin-top: 25px;
+    max-width: 600px;
 }
 
 .card {
-    flex: 0 1 440px;          /* до 440px, но может сжиматься */
     border: 1px solid var(--kantlinje);
     border-radius: 8px;
     padding: 10px 17px;
@@ -223,11 +202,8 @@ header{
 }
 
 .card img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 400 / 260;
-    object-fit: cover;
+    width: 400px;
+    height: 260px;
     border-radius: 8px;
 }
 
@@ -243,12 +219,11 @@ header{
     color: var(--dempet);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding-bottom: 10px;
-    line-height: 1.4;   /* расстояние между строками */
+    line-height: 1.4; /*делает расстояние между строками*/ 
 }
 
 .card ul {
     display: flex;
-    flex-wrap: wrap;
     gap: 12px;
 }
 
@@ -259,17 +234,13 @@ header{
     font-weight: 400;
 }
 
-/* ================= НАВЫКИ ================= */
-
 .ferdigheter {
     margin-left: 10%;
-    margin-right: 10%;
     margin-top: 4%;
 }
 
 .ferdigheter ul {
     display: flex;
-    flex-wrap: wrap;
     gap: 18px;
     list-style: none;
 }
@@ -286,11 +257,9 @@ header{
     font-weight: 500;
 }
 
-/* ================= FOOTER ================= */
-
 footer {
     margin-top: 5%;
-    min-height: 80px;
+    height: 80px;
     background-color: var(--flate);
     border-top: 1px solid var(--kantlinje);
     display: flex;
@@ -313,193 +282,4 @@ footer {
 .text-2 ul {
     display: flex;
     gap: 30px;
-    list-style: none;
-}
-
-
-/* =====================================================
-   АДАПТИВ (всегда в конце файла, от большего к меньшему)
-   ===================================================== */
-
-/* ---- Ноутбук / Full HD: 1920 и меньше ---- */
-@media (max-width: 1920px) {
-    .nav {
-        margin-right: 60px;
-        gap: 40px;
-    }
-
-    .content {
-        margin-top: 60px;
-    }
-
-    .content-1 {
-        margin-top: 160px;
-    }
-
-    .card {
-        flex-basis: 420px;
-    }
-}
-
-/* ---- Небольшой ноутбук: 1440 и меньше ---- */
-@media (max-width: 1440px) {
-    .nav {
-        margin-right: 30px;
-        gap: 30px;
-    }
-
-    .content-1 {
-        margin-top: 120px;
-    }
-
-    .card h2 {
-        font-size: 24px;
-    }
-
-    .card {
-        flex-basis: 380px;
-    }
-}
-
-/* ---- Планшет: 1100 и меньше (фото уходит под текст) ---- */
-@media (max-width: 1100px) {
-    .content,
-    .content-1,
-    .ferdigheter {
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-
-    .content {
-        margin-top: 40px;
-    }
-
-    .content > *:not(img) {
-        max-width: 100%;
-    }
-
-    .content img {
-        position: static;
-        display: block;
-        width: 100%;
-        max-width: 500px;
-        margin-top: 30px;
-    }
-
-    .content-1 {
-        margin-top: 70px;
-    }
-
-    .nav {
-        margin-right: 0;
-        gap: 24px;
-    }
-
-    .logo {
-        padding-left: 0;
-    }
-
-    .text-1 {
-        padding-left: 20px;
-    }
-
-    .text-2 {
-        padding-right: 20px;
-    }
-}
-
-/* ---- Телефон: 768 и меньше ---- */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 12px 16px;
-        gap: 10px;
-    }
-
-    .nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px 18px;
-        font-size: 15px;
-    }
-
-    .content h2 {
-        letter-spacing: 1px;
-    }
-
-    .context {
-        font-size: 16px;
-    }
-
-    .prosjekt {
-        padding: 10px 24px;
-    }
-
-    .section-title {
-        font-size: 24px;
-    }
-
-    .cards {
-        flex-direction: column;
-        gap: 24px;
-    }
-
-    .card {
-        flex: 1 1 auto;
-        width: 100%;
-    }
-
-    .card h2 {
-        font-size: 22px;
-    }
-
-    .ferdigheter {
-        margin-top: 40px;
-    }
-
-    .ferdigheter ul {
-        gap: 10px;
-    }
-
-    .ferdigheter li {
-        padding: 10px 22px;
-        margin-top: 0;
-    }
-
-    footer {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-        padding: 20px 16px;
-        text-align: center;
-    }
-
-    .text-1,
-    .text-2 {
-        padding: 0;
-    }
-
-    .text-2 ul {
-        justify-content: center;
-        gap: 20px;
-    }
-}
-
-/* ---- Маленькие телефоны: 480 и меньше ---- */
-@media (max-width: 480px) {
-    .content {
-        margin-top: 30px;
-    }
-
-    .buttons {
-        flex-direction: column;
-    }
-
-    .prosjekt {
-        width: 100%;
-    }
-
-    .content-1 {
-        margin-top: 50px;
-    }
 }
