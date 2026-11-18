@@ -424,6 +424,12 @@ footer {
         margin-top: 10.5px;
         margin-left: 67%;
     }
+
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
     
     header {
         flex-direction: column;
