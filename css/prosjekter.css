@@ -1,0 +1,193 @@
+:root{
+    --bakgrunn: #0D1117;    /*Hovedbakgrunn*/
+    --flate: #161B22;       /*Kort, seksjoner*/
+    --kantlinje: #30363D;   /*Rammer, linjer*/
+    --tekst:#E6EDF3;        /*Brødtekst, overskrifter*/
+    --dempet: #8B949E;      /*Sekundærtekst*/
+    --aksent1: #22D3EE;     /*Knapper, lenker, logo*/
+    --aksent2: #A78BFA;     /*Detaljer, hovern*/
+    --suksess: #34D399;     /*Status, «åpen for jobb»*/
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+body{
+    background-color: var(--bakgrunn);
+    overflow-x: hidden;   
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    min-height: 60px;               
+    background-color: var(--flate);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.logo {
+    font-weight: bold;
+    color: var(--aksent1);
+    padding-left: 27px;
+}
+
+.mobile-menu {
+    display: none;
+    color: var(--aksent1);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding-top: 5px;
+    border: 1px solid var(--kantlinje);
+    padding: 5px 5px;
+    background-color: var(--flate);
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: var(--dempet);
+    cursor: pointer;
+}
+
+.mobile-menu a:hover {
+    color: var(--aksent1);
+}
+
+.nav {
+    display: flex;
+    gap: 50px;
+    margin-right: 100px;
+    font-size: 16px;
+    list-style: none;
+}
+
+.nav a {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding-bottom: 6px;
+    color: var(--dempet);
+    text-decoration: none;
+    white-space: nowrap;            
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--aksent1);
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+    transform: translateX(0);
+}
+
+.nav a:hover {
+    color: var(--aksent1);
+}
+
+.nav a.active {
+    color: var(--aksent1);
+}
+
+.prosjekter {
+    padding-top: 2%;
+    padding-left: 10%;
+    gap: 15px;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    font-size: 30px;
+    color: var(--tekst);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--aksent1);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+.section-title:hover::after {
+    width: 100%;
+}
+
+.prosjekter p {
+    padding-top: 20px;
+    color: var(--dempet);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+}
+
+.filters {
+    display: flex;
+    gap: 20px;
+    padding-left: 10%;
+    padding-top: 1%;
+}
+
+.filter-btn {
+    border: 1px solid var(--kantlinje);
+    background-color: var(--flate);
+    padding: 8px 17px;
+    border-radius: 18px;
+    color: var(--tekst);
+    cursor: pointer;
+}
+
+.filter-btn.active{
+    border: 1px solid var(--kantlinje);
+    background-color: var(--aksent1);
+    padding: 8px 20px;
+    border-radius: 18px;
+    color: var(--flate);
+    font-weight: 550;
+}
+
+.project.hidden { 
+    display: none; 
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 20px;
+    padding-left: 10%;
+    padding-top: 2%;
+}
+
+.project {
+    border: 1px solid var(--kantlinje);
+    padding: 10px 8px;
+    background-color: var(--flate);
+}
+
