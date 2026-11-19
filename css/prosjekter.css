@@ -178,16 +178,97 @@ header{
 }
 
 .projects {
+    padding-left: 10%;
+    padding-top: 1%;
     display: grid;
     grid-template-columns: repeat(3, 2fr);
-    gap: 20px;
-    padding-left: 10%;
-    padding-top: 2%;
+    gap: 25px;
+    margin-right: 20%;
 }
 
 .project {
     border: 1px solid var(--kantlinje);
-    padding: 10px 8px;
+    border-radius: 8px;
+    padding: 8px 10px;
     background-color: var(--flate);
 }
+
+.project img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-body h2 {
+    color: var(--tekst);
+    padding-top: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.card-body p {
+    padding-left: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--dempet);
+    line-height: 1.4;
+    padding-bottom: 10px;
+}
+
+.card-body ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.card-body li {
+    list-style: none;
+    color: var(--aksent1);
+    font-weight: 400;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-bottom: 10px;
+}
+
+.project a {
+    text-decoration: none;
+    color: var(--aksent2);
+    cursor: pointer;
+}
+
+.project a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 5%;
+    min-height: 80px;                
+    background-color: var(--flate);
+    border-top: 1px solid var(--kantlinje);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.text-1 {
+    color: var(--dempet);
+    padding-top: 30px;
+    padding-left: 40px;
+}
+
+.text-2 {
+    color: var(--dempet);
+    padding-top: 30px;
+    padding-right: 85px;
+}
+
+.text-2 ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+
 
