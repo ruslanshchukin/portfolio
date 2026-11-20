@@ -40,6 +40,29 @@ header{
     padding-left: 27px;
 }
 
+.logo {
+    font-weight: bold;
+    color: var(--aksent1);
+    padding-left: 27px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: var(--aksent1);
+    cursor: pointer;
+}
+
+.logo:hover {
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.7);
+    animation: wiggle 0.4s ease;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25%      { transform: rotate(-6deg); }
+    75%      { transform: rotate(6deg); }
+}
+
 .mobile-menu {
     display: none;
     color: var(--aksent1);
