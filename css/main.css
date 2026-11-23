@@ -9,6 +9,10 @@
     --suksess: #34D399;     /*Status, «åpen for jobb»*/
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
