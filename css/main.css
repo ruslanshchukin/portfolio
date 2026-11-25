@@ -51,8 +51,14 @@ header{
     cursor: pointer;
 }
 
+.logo img {
+    display: block;
+    height: 25px;
+    width: auto;
+}
+
 .logo:hover {
-    text-shadow: 0 0 10px rgba(34, 211, 238, 0.7);
+    filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.7));
     animation: wiggle 0.4s ease;
 }
 
@@ -654,6 +660,10 @@ footer {
 
     .logo {
         font-size: 44px;
+    }
+
+    .logo img {
+        height: 48px;
     }
 
     .nav {
