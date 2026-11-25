@@ -661,6 +661,7 @@ footer {
 .dokumentasjon {
     display: block;
     margin-left: 10%;
+    margin-right: 10%;
     margin-top: 2%;
 }
 
@@ -676,7 +677,8 @@ footer {
     background-color: var(--flate);
     border-radius: 10px;
     padding: 20px 20px;
-    max-width: 670px;
+    max-width: none;
+    min-width: 0;
     height: auto;
 }
 
@@ -703,6 +705,7 @@ footer {
 
 .registasjon {
     margin-left: 10%;
+    margin-right: 10%;
     margin-top: 5%;
 }
 
@@ -717,7 +720,8 @@ footer {
     background-color: var(--flate);
     border-radius: 12px;
     resize: none;
-    width: 30%;
+    width: 100%;
+    max-width: 450px;
     height: 130px;
     box-sizing: border-box; 
     color: var(--aksent1);
@@ -866,6 +870,35 @@ footer {
         font-size: 20px;
     }
 
+    /*Dokumentasjon*/
+    .cards-dokumentasjon {
+        gap: 28px;
+    }
+
+    .card-dokumentasjon {
+        padding: 28px 28px;
+    }
+
+    .card-dokumentasjon h2 {
+        font-size: 36px;
+    }
+
+    .card-dokumentasjon a {
+        font-size: 20px;
+        padding-bottom: 10px;
+    }
+
+    .registasjon textarea {
+        max-width: 600px;
+        height: 170px;
+        font-size: 18px;
+    }
+
+    .registasjon form button {
+        font-size: 18px;
+        padding: 14px 34px;
+    }
+
     footer {
         min-height: 110px;
         font-size: 20px;
@@ -894,6 +927,11 @@ footer {
 
     .video {
         max-width: 900px;
+    }
+
+    /*Dokumentasjon*/
+    .cards-dokumentasjon {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -930,6 +968,15 @@ footer {
     .content-2-2 {
         margin-top: 50px;
     }
+
+    /*Dokumentasjon*/
+    .dokumentasjon {
+        margin-top: 40px;
+    }
+
+    .registasjon {
+        margin-top: 60px;
+    }
 }
 
 /*Opptil 1440px*/
@@ -961,6 +1008,12 @@ footer {
     .content-2 {
         margin-top: 80px;
     }
+
+    /*Dokumentasjon*/
+    .card-dokumentasjon h2 {
+        font-size: 24px;
+        padding-bottom: 20px;
+    }
 }
 
 /*Opptil 1100p*/
@@ -970,7 +1023,9 @@ footer {
     .content-1,
     .content-om-meg,
     .content-2,
-    .ferdigheter {
+    .ferdigheter,
+    .dokumentasjon,
+    .registasjon {
         margin-left: 5%;
         margin-right: 5%;
     }
@@ -1051,6 +1106,15 @@ footer {
 
     .content-2 {
         margin-top: 70px;
+    }
+
+    /*Dokumentasjon*/
+    .cards-dokumentasjon {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .registasjon {
+        margin-top: 50px;
     }
 }
 
@@ -1192,6 +1256,43 @@ footer {
         font-size: 15px;
     }
 
+    /*Dokumentasjon*/
+    .dokumentasjon {
+        margin-top: 24px;
+    }
+
+    .cards-dokumentasjon {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding-top: 20px;
+    }
+
+    .card-dokumentasjon {
+        padding: 16px;
+    }
+
+    .card-dokumentasjon h2 {
+        font-size: 22px;
+        padding-bottom: 14px;
+    }
+
+    .card-dokumentasjon a {
+        padding-bottom: 10px;   
+    }
+
+    .card-dokumentasjon a:hover {
+        transform: none;        
+    }
+
+    .registasjon {
+        margin-top: 40px;
+    }
+
+    .registasjon textarea {
+        max-width: 100%;
+        height: 120px;
+    }
+
     /*Footer*/
     footer {
         flex-direction: column;
@@ -1258,5 +1359,19 @@ footer {
     .kontroller input[type="range"] {
         flex: 1 1 100%;
         max-width: 100%;
+    }
+
+    /*Dokumentasjon*/
+    .card-dokumentasjon h2 {
+        font-size: 20px;
+    }
+
+    .registasjon {
+        margin-top: 30px;
+    }
+
+    .registasjon form button {
+        width: 100%;
+        justify-content: center;
     }
 }
