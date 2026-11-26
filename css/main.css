@@ -28,13 +28,13 @@ body{
     background-color: var(--bakgrunn);
     overflow-x: hidden;
     margin: 0;
-    min-height: 100vh;         /* минимум на всю высоту экрана */
+    min-height: 100vh;       
     display: flex;
     flex-direction: column;
 }
 
 main {
-    flex: 1;              /* забирает всё свободное место */    
+    flex: 1;              
 }
 
 header{
@@ -661,6 +661,7 @@ footer {
 .dokumentasjon {
     display: block;
     margin-left: 10%;
+    margin-right: 10%;
     margin-top: 2%;
 }
 
@@ -678,6 +679,7 @@ footer {
     padding: 20px 20px;
     max-width: 670px;
     height: auto;
+    min-width: 0;
 }
 
 .card-dokumentasjon h2 {
@@ -703,6 +705,7 @@ footer {
 
 .registasjon {
     margin-left: 10%;
+    margin-right: 10%;
     margin-top: 5%;
 }
 
@@ -722,6 +725,7 @@ footer {
     box-sizing: border-box; 
     color: var(--aksent1);
     padding: 8px 12px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .registasjon form button {
@@ -866,6 +870,54 @@ footer {
         font-size: 20px;
     }
 
+    .dokumentasjon {
+        width: 90%;
+        max-width: 1700px;
+        margin: 50px auto 0;
+    }
+
+    .cards-dokumentasjon {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 25px;
+        padding-top: 35px;
+    }
+
+    .card-dokumentasjon {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        padding: 25px;
+    }
+
+    .card-dokumentasjon h2 {
+        font-size: 30px;
+        padding-bottom: 30px;
+    }
+
+    .card-dokumentasjon a {
+        font-size: 19px;
+        overflow-wrap: anywhere;
+    }
+
+    .registasjon {
+        width: 90%;
+        max-width: 1700px;
+        margin: 90px auto 0;
+    }
+
+    .registasjon textarea {
+        width: 50%;
+        max-width: 700px;
+        min-height: 160px;
+        font-size: 18px;
+    }
+
+    .registasjon form button {
+        font-size: 18px;
+        padding: 14px 32px;
+    }
+
+
     footer {
         min-height: 110px;
         font-size: 20px;
@@ -961,6 +1013,15 @@ footer {
     .content-2 {
         margin-top: 80px;
     }
+
+    /*Dokumentasjon*/
+    .card-dokumentasjon h2 {
+        font-size: 24px;
+    }
+
+    .registasjon textarea {
+        width: 40%;
+    }
 }
 
 /*Opptil 1100p*/
@@ -1052,6 +1113,33 @@ footer {
     .content-2 {
         margin-top: 70px;
     }
+
+    /*Dokumentasjon*/
+    .dokumentasjon {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 30px;
+    }
+
+    .cards-dokumentasjon {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+        padding-top: 20px;
+    }
+
+    .card-dokumentasjon {
+        max-width: none;
+    }
+
+    .registasjon {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 60px;
+    }
+
+    .registasjon textarea {
+        width: 60%;
+    }
 }
 
 /*Opptil 1024px (prosjekter)*/
@@ -1066,32 +1154,82 @@ footer {
 /*Opptil 768px (mobil/nettbrett)*/
 
 @media (max-width: 768px) {
-    .logo {
-        margin-right: 90%;
+
+    header {
         position: relative;
+        z-index: 1000;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 20px;
+        min-height: 60px;
+    }
+
+    .logo {
+        margin-right: 0;
+        padding-left: 0;
+        position: relative;
+        z-index: 1001;
     }
 
     .mobile-menu {
         display: block;
-        position: absolute;
-        margin-top: 10.5px;
-        margin-left: 67%;
+        position: relative;
+        margin: 0;
+        margin-left: auto;
+        font-size: 16px;
+        color: var(--aksent1);
+        cursor: pointer;
+        z-index: 1002;
     }
 
     .mobile-menu ul {
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 0;
+        list-style: none;
+
+        position: absolute;
+        top: calc(100% + 12px);
+        right: 0;
+
+        min-width: 190px;
+        padding: 8px;
+        border: 1px solid var(--kantlinje);
+        border-radius: 8px;
+        background-color: var(--flate);
+
+        z-index: 1003;
     }
 
-    header {
-        flex-direction: column;
-        padding: 12px 16px;
-        gap: 10px;
+    .mobile-menu li {
+        width: 100%;
+    }
+
+    .mobile-menu a {
+        display: block;
+        width: 100%;
+        padding: 12px 10px;
+        text-decoration: none;
+        color: var(--dempet);
+        cursor: pointer;
+        position: relative;
+        z-index: 1004;
+    }
+
+    .mobile-menu a:hover {
+        color: var(--aksent1);
+        background-color: rgba(34, 211, 238, 0.08);
     }
 
     .nav {
         display: none;
+    }
+
+    .content {
+        position: relative;
+        z-index: 1;
     }
 
     .section-title,
@@ -1099,7 +1237,7 @@ footer {
         font-size: 24px;
     }
 
-    /*Hjem*/
+    /* Hjem */
     .content h2 {
         letter-spacing: 1px;
     }
@@ -1134,7 +1272,7 @@ footer {
         margin-top: 5px;
     }
 
-    /*Om meg*/
+    /* Om meg */
     .om-meg-tekst p {
         letter-spacing: 0.5px;
     }
@@ -1151,7 +1289,7 @@ footer {
         letter-spacing: 0.5px;
     }
 
-    /*Prosjekter*/
+    /* Prosjekter */
     .prosjekter {
         padding-left: 5%;
         padding-right: 5%;
@@ -1192,7 +1330,56 @@ footer {
         font-size: 15px;
     }
 
-    /*Footer*/
+    /* Dokumentasjon / Kontakt */
+    .dokumentasjon {
+        margin-top: 24px;
+    }
+
+    .cards-dokumentasjon {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding-top: 16px;
+    }
+
+    .card-dokumentasjon {
+        padding: 18px;
+    }
+
+    .card-dokumentasjon h2 {
+        font-size: 22px;
+        padding-bottom: 14px;
+    }
+
+    .card-dokumentasjon a {
+        padding: 8px 0;
+        font-size: 16px;
+    }
+
+    .card-dokumentasjon a:hover {
+        transform: none;
+    }
+
+    .registasjon {
+        margin-top: 50px;
+    }
+
+    .registasjon form {
+        padding-top: 14px;
+    }
+
+    .registasjon textarea {
+        width: 100%;
+        height: 150px;
+        font-size: 16px; 
+    }
+
+    .registasjon form button {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 28px;
+    }
+
+    /* Footer */
     footer {
         flex-direction: column;
         align-items: center;
@@ -1215,8 +1402,9 @@ footer {
 
 /*Opptil 480px (liten mobil)*/
 
+
 @media (max-width: 480px) {
-    /*Hjem*/
+
     .content {
         margin-top: 30px;
     }
@@ -1233,7 +1421,6 @@ footer {
         margin-top: 50px;
     }
 
-    /*Om meg*/
     .content-om-meg {
         margin-top: 30px;
     }
@@ -1258,5 +1445,22 @@ footer {
     .kontroller input[type="range"] {
         flex: 1 1 100%;
         max-width: 100%;
+    }
+
+    /* Dokumentasjon / Kontakt */
+    .card-dokumentasjon {
+        padding: 16px;
+    }
+
+    .card-dokumentasjon h2 {
+        font-size: 20px;
+    }
+
+    .card-dokumentasjon a {
+        font-size: 15px;
+    }
+
+    .registasjon {
+        margin-top: 40px;
     }
 }
