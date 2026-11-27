@@ -20,4 +20,3 @@ volum.addEventListener('input', () => {
 fullskjerm.addEventListener('click', () => {
     if (video.requestFullscreen) video.requestFullscreen();
 });
-
